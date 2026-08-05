@@ -1,12 +1,14 @@
 pipeline {
     agent any
 
-   stage('Clone Code') {
-    steps {
-        git branch: 'main',
-            url: 'https://github.com/Manas-Deshpande/jenkins-demo-pipeline.git'
-    }
-}
+    stages {
+
+        stage('Clone Code') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/Manas-Deshpande/jenkins-demo-pipeline.git'
+            }
+        }
 
         stage('Install Dependencies') {
             steps {
